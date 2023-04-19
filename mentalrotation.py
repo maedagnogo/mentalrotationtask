@@ -16,3 +16,6 @@ instructions = stimuli.TextScreen("Instructions",
     Press the spacebar to start.""")
 
 exp.add_data_variable_names(['trial', 'shape', 'congruence', 'rotation', 'respkey', 'RT'])
+#blabalabalaaapkeoidhzeouizio
+
+#expyriment.stimuli.Picture
