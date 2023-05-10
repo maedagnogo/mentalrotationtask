@@ -23,37 +23,48 @@ C = [stimuli.Picture('shapeC1.png'),"C"]
 D = [stimuli.Picture('shapeD1.png'),"D"]
 E = [stimuli.Picture('shapeE1.png'),"E"]
 
-#position1 = (0,0)
+position1 = (-20,0)
 position2 = (250,0)
 
-trials = [A, B, C, D, E]
-random.shuffle(trials)
+shapes = [A, B, C, D, E]
+N_trials = len(shapes)
+random.shuffle(shapes)
+
+targets2 = []
+targets1 = []
+congruence = []
+rotation_angles = []
+
+for i in range(N_trials):
+    target1 = shapes[i][0]
+    n = random.randint(0,1)
+    rotation_angle = random.randint(0,180)
+    rotation_angles.append(rotation_angle)
+
+    if n == 0 :
+        target2=target1
+        congruence.append('cong')
+    elif n == 1 :
+        target2 = target1
+        target2.flip((True,False))
+        congruence.append('incong')
+  
+    target1.reposition(position1)
+    targets1.append(target1)
+    target2.reposition(position2)
+    target2.rotate(rotation_angle)
+    targets2.append(target2)
 
 control.start(skip_ready_screen=True)
 instructions.present()
 exp.keyboard.wait()
 
-for i in range(len(trials)):
+for j in range(N_trials):
+    targets2[j].plot(blankscreen)
+    targets1[j].plot(blankscreen)
     blankscreen.present()
-    exp.clock.wait(WAIT_TIME)
-    target1 = trials[i][0]
-    n = random.randint(0,1)
-    rotation_angle = random.randint(0,180)
-    if n == 0 :
-        target2 = target1
-        congruence = 'cong'
-    elif n == 1 :
-        target2 = target1
-        target2.flip((True,False))
-        congruence = 'incong'
-
-    target2.rotate(rotation_angle)
-    target2.reposition(position2)
-
-    target1.present()
-    target2.present(clear=False)
-
     key, rt = exp.keyboard.wait()
-    exp.data.add([i, trials[i][1], congruence, rotation_angle, key, rt])
+    exp.data.add([j, shapes[j][1], congruence[j], rotation_angles[j], key, rt])
+
 
 control.end()
