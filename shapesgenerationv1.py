@@ -46,9 +46,6 @@ pygame.draw.rect(screen, BLACK, (90, 120, 20, 20))
 pygame.draw.rect(screen, BLACK, (110, 120, 20, 20))
 pygame.image.save(screen, "shapeD.png")
 
-#screen = pygame.transform.flip(screen, True, False)
-#pygame.image.save(screen, "shapeD2.png")
-
 pygame.draw.circle(screen, WHITE, (100,100), 71, 0)
 pygame.draw.rect(screen, BLACK, (70, 70, 20, 20))
 pygame.draw.rect(screen, BLACK, (90, 70, 20, 20))
@@ -105,16 +102,6 @@ pygame.draw.rect(screen, BLACK, (110, 90, 20, 20))
 pygame.draw.rect(screen, BLACK, (110, 70, 20, 20))
 pygame.draw.rect(screen, BLACK, (110, 110, 20, 20))
 pygame.image.save(screen, "shapeJ.png")
-
-pygame.draw.circle(screen, WHITE, (100,100), 71, 0)
-pygame.draw.rect(screen, BLACK, (70, 90, 20, 20))
-pygame.draw.rect(screen, BLACK, (90, 90, 20, 20))
-pygame.draw.rect(screen, BLACK, (90, 70, 20, 20))
-pygame.draw.rect(screen, BLACK, (110, 90, 20, 20))
-pygame.draw.rect(screen, BLACK, (110, 70, 20, 20))
-pygame.draw.rect(screen, BLACK, (110, 110, 20, 20))
-pygame.image.save(screen, "shapeJ.png")
-
 
 pygame.draw.circle(screen, WHITE, (100,100), 71, 0)
 pygame.draw.rect(screen, BLACK, (70, 70, 20, 20))
